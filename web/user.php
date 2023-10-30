@@ -17,7 +17,7 @@ if(empty($_SESSION['ID'])) {
 echo $_SESSION['Name'] ?>
 
 <a href="signout.php">
-	Bay mất tiu òi.
+	Ấn vào để đăng xuất.
 </a>
 </body>
 </html>
