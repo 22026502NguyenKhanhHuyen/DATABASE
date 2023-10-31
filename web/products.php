@@ -34,27 +34,36 @@ $result = mysqli_query($connect, $sql);
         <div class='title'>
           <?php echo $each['Name'] ?>
         </div>
-        <div class='cart'>
-          <span class='lnr lnr-cart'></span>
+        <!-- link thêm vào giỏ hàng -->
+        <?php if(!empty($_SESSION['ID'])) { ?> <div class='cart'>
+          <a href="add_to_cart.php?ID=<?php echo $each['ID'] ?>">
+          <span class='lnr lnr-cart'>
+          </span>
+          </a>
         </div>
+        <?php } else { ?>
+        <div class='cart'>
+          <span class='lnr lnr-cart'>
+          </span>
+          </a>
+        </div>
+        <?php } ?>
       </div>
       <div class='card-footer'>
         <div class='span'>
-          <a href="product.php?ID=<?php echo $each['ID'] ?>">
         Xem
         <!-- chỗ này chưa thêm chi tiết sản phẩm-->
       </a>
 
         </div>
         <div class='span'>
-          <a href="product.php?ID=<?php echo $each['ID'] ?>">
         Xem 
+
         <!-- chỗ này chưa thêm thể loại giày-->
       </a>
 
         </div>
         <div class='span'>
-         <a href="product.php?ID=<?php echo $each['ID'] ?>">
         Xem 
         <!-- chỗ này chưa thêm cái gì đó chưa nghĩ ra
           nam/nữ/unisex-->
@@ -63,7 +72,6 @@ $result = mysqli_query($connect, $sql);
       </div>
     </div>
     <?php endforeach ?>
-
   </div>
 </div>
 <!-- partial -->

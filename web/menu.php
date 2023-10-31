@@ -5,16 +5,29 @@
 					Trang chủ
 				</a>
 			</li>
-			<li>
-				<a href="signup.php">
-					Đăng ký
-				</a>
-			</li>
+			<?php if(empty($_SESSION['ID'])) {?>
 			<li>
 				<a href="signin.php">
 					Đăng nhập
 				</a>
 			</li>
+			<li>
+				<a href="signup.php">
+					Đăng ký
+				</a>
+			</li>
+			<?php } else { ?> 
+			<li>
+				<a href="view_cart.php">
+					Xem giỏ hàng
+				</a>
+			</li>
+			<li>
+				<a href="signout.php">
+					Đăng xuất
+				</a>
+			</li>
+		<?php } ?>
 		</ol>
-	</div>
+</div>
 

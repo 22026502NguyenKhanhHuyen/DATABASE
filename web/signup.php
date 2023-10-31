@@ -25,6 +25,12 @@ if(isset($_SESSION['error'])){
 	Mật khẩu
 	<input type="password" name="Password">
 	<br>
+	Số điện thoại
+	<input type="text" name="Phone_Number">
+	<br>
+	Địa chỉ
+	<input type="text" name="Address">
+	<br>
 	<button>Đăng ký</button>
 </form>
 </body>

@@ -13,10 +13,9 @@ $sql = "select * from customers
 where Email = '$Email' and Password = '$Password'";
 $result = mysqli_query($connect,$sql);
 $number_rows = mysqli_num_rows($result);
-
+session_start();
 if($number_rows == 1) {
-	echo "Đăng nhập thành công";
-	session_start();
+	#echo "Đăng nhập thành công";
 	$each = mysqli_fetch_array($result);
 	$ID = $each['ID'];
 	$_SESSION['ID'] = $each['ID'];
@@ -30,6 +29,8 @@ if($number_rows == 1) {
 		mysqli_query($connect,$sql);
 		setcookie('remember', $token, time() + 86400 * 30);
 	}
+	header('location:index.php');
 } else {
-header('location:signin.php?error=Đăng nhập sai rùi.');
+	$_SESSION['error'] = 'Đăng nhập sai mất tiu rùi.';
+    header('location:signin.php');
 }

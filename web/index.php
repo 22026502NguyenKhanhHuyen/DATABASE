@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['error'])){
+	echo $_SESSION['error'];
+	unset($_SESSION['error']);
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +29,7 @@
 			height: 10%;
 		}
 	</style>
-	
+
 </head>
 <body>
 <div id ="tong">

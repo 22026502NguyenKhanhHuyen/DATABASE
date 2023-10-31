@@ -8,8 +8,8 @@ if(isset($_COOKIE['remember'])) {
 	limit 1";
 	$result = mysqli_query($connect,$sql);
 	$number_rows = mysqli_num_rows($result);
-	$each = mysqli_fetch_array($result);
 	if($number_rows == 1) {
+	$each = mysqli_fetch_array($result);
 	$_SESSION['ID'] = $each['ID'];
 	$_SESSION['Name'] = $each['Name'];
     }
@@ -27,6 +27,12 @@ if(isset($_SESSION['ID'])) {
 	<title></title>
 </head>
 <body>
+	<?php
+if(isset($_SESSION['error'])){
+	echo $_SESSION['error'];
+	unset($_SESSION['error']);
+}
+?>
 <form method="post" action="process_signin.php">
 	<h1>Đăng Nhập</h1>
 	Email

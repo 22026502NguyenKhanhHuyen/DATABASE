@@ -3,6 +3,8 @@
 $Name = $_POST['Name'];
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
+$Phone_Number = $_POST['Phone_Number'];
+$Address = $_POST['Address'];
 
 require 'admin/connect.php';
 $sql = "select count(*) from customers
@@ -17,8 +19,8 @@ if($number_rows == 1){
 	exit;
 }
 
-$sql = "insert into customers(Name, Email, Password)
-values ('$Name', '$Email', '$Password')";
+$sql = "insert into customers(Name, Email, Password, Phone_Number, Address)
+values ('$Name', '$Email', '$Password', '$Phone_Number', '$Address')";
 mysqli_query($connect, $sql);
 
 $sql = "select ID from customers
@@ -30,6 +32,6 @@ $_SESSION['ID'] = $ID;
 $_SESSION['Name'] = $Name;
 mysqli_close($connect);
 
-header('location:user.php');
+header('location:index.php');
 
 
