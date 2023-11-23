@@ -1,4 +1,7 @@
 <?php
+require '../check_admin_login.php';
+
+
 	$ID = $_GET['ID'];
 
 require '../connect.php';

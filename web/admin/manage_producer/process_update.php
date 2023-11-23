@@ -1,5 +1,7 @@
 <?php
 
+require '../check_admin_login.php';
+
 if(empty($_POST['ID'])||empty($_POST['Name'])||empty($_POST['Address'])||empty($_POST['Phone'])||empty($_POST['Image'])){
 	header('location:form_update.php?error=Phải điền đầy đủ thông tin');
 } else {

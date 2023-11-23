@@ -1,4 +1,7 @@
 <?php
+
+require '../check_admin_login.php';
+
 $ID = $_POST['ID'];
 $Name = $_POST['Name'];
 $Image_new = $_FILES['Image_new'];

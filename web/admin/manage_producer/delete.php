@@ -1,5 +1,8 @@
 <?php
 
+require '../check_admin_login.php';
+
+
 if(empty($_GET['ID'])){
 	header('location:index.php?error=Phải truyền mã');
 } else {

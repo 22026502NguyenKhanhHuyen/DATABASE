@@ -1,5 +1,7 @@
 <?php
 
+require '../check_admin_login.php';
+
 if(empty($_POST['Name'])||empty($_POST['Address'])||empty($_POST['Phone'])||empty($_POST['Image'])){
 	header('location:form_insert.php?error=Phải điền đầy đủ thông tin');
 } else {
