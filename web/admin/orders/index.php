@@ -12,7 +12,8 @@ require '../connect.php';
 $sql = "select orders.* ,customers.Name, customers.Phone_Number, customers.Address
 from orders
 join customers
-on customers.id = orders.customer_id";
+on customers.id = orders.customer_id
+order by Status asc";
 $result = mysqli_query($connect,$sql);
 #1:41:44
 ?>
