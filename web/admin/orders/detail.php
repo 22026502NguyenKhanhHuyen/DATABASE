@@ -19,10 +19,10 @@ $sum = 0;
 	<tr>
 		<th>Ảnh</th>
 		<th>Tên sản phẩm</th>
+		<th>Chi tiết</th>
 		<th>Giá</th>
 		<th>Số lượng</th>
 		<th>Tổng tiền</th>
-		<th>Xóa</th>
 	</tr>
 	<?php foreach($result as $ID => $each): ?>
 		<tr>
@@ -30,6 +30,7 @@ $sum = 0;
 			$each['Image'] ?>">
 			</td>
 			<td><?php echo $each['Name'] ?></td>
+			<td><?php echo $each['Description'] ?></td>
 			<td><?php echo $each['Price'] ?></td>
 			<td><?php echo $each['Quantity'] ?></td>
 			<td>
@@ -37,7 +38,6 @@ $sum = 0;
 				$result =  $each['Quantity']*$each['Price'] ;
 				$sum += $result;
 				echo $result;
-
 				?>
 			</td>
 		</tr>

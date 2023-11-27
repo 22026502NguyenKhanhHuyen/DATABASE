@@ -26,7 +26,7 @@ require '../check_admin_login.php';
 		<th>Tên</th>
 		<th>Ảnh</th>
 		<th>Giá</th>
-		<th>Tên nhà sản xuất</th>
+		<th>Dòng sản phẩm</th>
 		<th>Sửa</th>
 		<th>Xóa</th>
 	</tr>
@@ -34,7 +34,8 @@ require '../check_admin_login.php';
 		<tr>
 			<td><?php echo $each['ID'] ?></td>
 			<td><?php echo $each['Name'] ?></td>
-			<td><img  height ="100" src="Image/<?php echo $each['Image'] ?>">
+			<td>
+				<img  height ="100" src="Image/<?php echo $each['Image'] ?>">
 			</td>
 			<td><?php echo $each['Price'] ?></td>
 			<td><?php echo $each['Producer_Name'] ?></td>

@@ -5,6 +5,16 @@
 					Trang chủ
 				</a>
 			</li>
+			<li>
+				<a href="gagionvuive.php">
+					Gà Giòn Vui Vẻ
+				</a>
+			</li>
+			<li>
+				<a href="myysotbobam.php">
+					Mỳ Ý Sốt Bò Bằm
+				</a>
+			</li>
 			<?php if(empty($_SESSION['ID'])) {?>
 			<li>
 				<a href="signin.php">

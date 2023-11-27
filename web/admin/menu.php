@@ -1,7 +1,7 @@
 <ul>
 	<li>
 		<a href="../manage_producer">
-			Quản lý nhà sản xuất
+			Quản lý dòng sản phẩm
 		</a>
 	</li>
 	<li>

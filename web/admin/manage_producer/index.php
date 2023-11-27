@@ -1,4 +1,3 @@
-
 <?php
 require '../check_admin_login.php';
 ?>
@@ -10,24 +9,19 @@ require '../check_admin_login.php';
 	<title></title>
 </head>
 <body>
-Khu vực quản lí nhà sản xuất
+<?php require '../menu.php';
+	require '../connect.php';
+$sql = "select * from producer";
+$result = mysqli_query($connect, $sql);
+	?>
+<h1>Khu vực quản lí nhà sản xuất</h1>
 <a href="form_insert.php">
 	Thêm
 </a>
-<?php
-include '../menu.php';
-?>
-<?php
-require '../connect.php';
-$sql = "select * from producer";
-$result = mysqli_query($connect,$sql);
-?>
 <table width="100%">
 	<tr>
 		<th>Mã</th>
 		<th>Tên</th>
-		<th>Địa chỉ</th>
-		<th>Điện thoại</th>
 		<th>Ảnh</th>
 		<th>Sửa</th>
 		<th>Xóa</th>
@@ -36,9 +30,9 @@ $result = mysqli_query($connect,$sql);
 		<tr>
 			<td><?php echo $each['ID'] ?></td>
 			<td><?php echo $each['Name'] ?></td>
-			<td><?php echo $each['Address'] ?></td>
-			<td><?php echo $each['Phone'] ?></td>
-			<td><img  height ="100" src="<?php echo $each['Image'] ?>"></td>
+			<td>
+				<img  height ="100" src="Image/<?php echo $each['Image'] ?>">
+			</td>
 			<td>
 				<a href="form_update.php?ID=<?php echo $each['ID']?>">
 				Sửa

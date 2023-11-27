@@ -2,7 +2,7 @@
 require '../check_admin_login.php';
 
 
-	$ID = $_GET['ID'];
+$ID = $_GET['ID'];
 
 require '../connect.php';
  $sql = "delete from products where ID = '$ID' ";

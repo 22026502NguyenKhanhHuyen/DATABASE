@@ -27,7 +27,10 @@ require '../check_admin_login.php';
 		Mô tả
 		<textarea name="Description"></textarea>
 		<br>
-		Nhà sản xuẩt
+		Combo
+	<input type="checkbox" name="combo">
+	<br>
+		Dòng sản phẩm
 		<select name="Producer_ID">
 			<?php foreach ($result as $each): ?>
 				<option value="<?php echo $each['ID'] ?>">

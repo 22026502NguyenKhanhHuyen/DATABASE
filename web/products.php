@@ -51,7 +51,7 @@ $result = mysqli_query($connect, $sql);
       </div>
       <div class='card-footer'>
         <div class='span'>
-        Xem
+          Gà Giòn Vui Vẻ
         <!-- chỗ này chưa thêm chi tiết sản phẩm-->
       </a>
 

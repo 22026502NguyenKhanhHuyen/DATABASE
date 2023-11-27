@@ -40,7 +40,7 @@ require '../check_admin_login.php';
 		<textarea name="Description"> <?php echo $each['Description'] ?>></textarea>
 
 		<br>
-		Nhà sản xuẩt
+		Dòng sản phẩm
 		<select name="Producer_ID">
 			<?php foreach ($producer as $producer1): ?>
 				<option value="<?php echo $producer1['ID'] ?>"

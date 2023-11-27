@@ -10,17 +10,11 @@ require '../check_admin_login.php';
 </head>
 <body>
 	<?php
-	    include '../menu.php';
+	    require '../menu.php';
     ?>
 <form method="post" action="process_insert.php" enctype="multipart/form-data">
 	Tên
 	<input type="text" name="Name">
-	<br>
-	Địa chỉ
-	<textarea name="Address"></textarea>
-	<br>
-	Điện thoại
-	<input type="text" name="Phone">
 	<br>
 	Ảnh
 	<input type="file" name="Image">
