@@ -3,9 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style_login.css">
 	<title></title>
 	<style type="text/css">
 		a {text-decoration:none}
+	.btn-primary {
+    color: #fff;
+    background-color: #e51717;
+    border-color: #ad0f0f
+}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #d10e2c;
+    border-color: #b50823
+}
 	</style>
 </head>
 <body>
@@ -59,10 +70,6 @@ $sum = 0;
 		</tr>
 	<?php endforeach ?>
 </table>
-<h1>
-	Tổng tiền hóa đơn:
-	$<?php echo $sum ?>
-</h1>
 <?php
 $ID = $_SESSION['ID'];
 require 'admin/connect.php';
@@ -71,18 +78,15 @@ where ID = '$ID'";
 $result = mysqli_query($connect,$sql);
 $each = mysqli_fetch_array($result);
 ?>
-
-<form method="post" action="process_checkout.php">
-	Tên người nhận
-	<input type="text" name="Name_Receiver" value="<?php echo $each['Name'] ?>">
-	<br>
-	Số điện thoại người nhận
-	<input type="text" name="Phone_Receiver" value="<?php echo $each['Phone_Number'] ?>">
-	<br>
-	Địa chỉ người nhận
-	<input type="text" name="Address_Receiver" value="<?php echo $each['Address'] ?>">
-	<br>
-	<button>Đặt hàng</button>
-</form>
+<div class="wrapper">
+    <form class="form-signin" method="post" action="process_checkout.php" >       
+      <h2 class="form-signin-heading">Tổng tiền hóa đơn:
+	<?php echo $sum ?></h2>
+      <input type="text" class="form-control" name="Name_Receiver" value="<?php echo $each['Name'] ?>" placeholder="Người Nhận" required="" autofocus="" />
+      <input type="text" class="form-control" name="Phone_Receiver" value="<?php echo $each['Phone_Number'] ?>" placeholder="Số điện thoại người nhận" required="" autofocus="" />
+      <input type="text" class="form-control" name="Address_Receiver" value="<?php echo $each['Address'] ?>" placeholder="Địa chỉ người nhận" required="" autofocus="" />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Đặt hàng</button>  
+    </form>
+  </div>
 </body>
 </html>

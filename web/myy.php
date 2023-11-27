@@ -52,23 +52,58 @@ $result = mysqli_query($connect, $sql);
       </div>
       <div class='card-footer'>
         <div class='span'>
+          <?php if($each['Status']==1) {
+            echo "Còn hàng";
+          }elseif($each['Status']==0){
+            echo "Hết hàng";
+          }
+          ?>
+      </a>
+
+        </div>
+        <div class='span'>
+        <?php if($each['Producer_ID']==15) {
+          ?>
+          <a href="gagionvuive.php">
           Gà Giòn Vui Vẻ
-        <!-- chỗ này chưa thêm chi tiết sản phẩm-->
-      </a>
-
-        </div>
-        <div class='span'>
-        Xem 
-
-        <!-- chỗ này chưa thêm thể loại giày-->
-      </a>
-
-        </div>
-        <div class='span'>
-        Xem 
-        <!-- chỗ này chưa thêm cái gì đó chưa nghĩ ra
-          nam/nữ/unisex-->
-      </a>
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==16) {
+          ?>
+          <a href="myysotbobam.php">
+          Mỳ Ý Sốt Bò Bằm
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==18) {
+          ?>
+          <a href="gasotcay.php">
+          Gà Sốt Cay
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==19) {
+          ?>
+          <a href="burger.php">
+          Burger
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==20) {
+          ?>
+          <a href="phananphu.php">
+          Phần Ăn Phụ
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==21) {
+          ?>
+          <a href="monttrangmieng.php">
+          Món Tráng Miệng
+        </a>
+        <?php 
+          }elseif($each['Producer_ID']==22) {
+          ?>
+          <a href="thucuong.php">
+          Thức Uống
+        </a>
+      <?php } ?>
         </div>
       </div>
     </div>

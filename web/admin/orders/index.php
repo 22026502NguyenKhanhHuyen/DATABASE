@@ -45,11 +45,13 @@ $result = mysqli_query($connect,$sql);
 			<td>
 				<?php
 				    if($each['Status'] == 0) {
-				    	echo "Mới đặt";
+				    	echo "Đang chờ xét duyệt";
 				    }elseif($each['Status'] == 1) {
 				    	echo "Đã duyệt";
 				    }elseif($each['Status'] == 2) {
 				    	echo "Đã hủy";
+				    }elseif($each['Status'] == 3) {
+				    	echo "Đã giao";
 				    }
 				?>
 			</td>
@@ -66,21 +68,26 @@ $result = mysqli_query($connect,$sql);
 				    Duyệt
 			    </a>
 			    <br>
-			    <a href="update.php?id=<?php echo $each['ID']?>&status=1">
+			    <a href="update.php?id=<?php echo $each['ID']?>&status=2">
 				    Hủy
 			    </a>
 			</td>
 	    <?php }?>
 		<?php if($each['Status'] == 1) { ?>
 			<td>
-			    <a href="update.php?id=<?php echo $each['ID']?>&status=2">
-				    Hủy
+			    <a href="update.php?id=<?php echo $each['ID']?>&status=3">
+				    Đã giao
 			    </a>
 			</td>
 		<?php }?>
 		<?php if($each['Status'] == 2) { ?>
 			<td>
 			   Đơn hàng đã hủy
+			</td>
+		<?php }?>
+		<?php if($each['Status'] == 3) { ?>
+			<td>
+			    Hoàn thành
 			</td>
 		<?php }?>
 		</tr>
