@@ -88,5 +88,9 @@ $each = mysqli_fetch_array($result);
       <button class="btn btn-lg btn-primary btn-block" type="submit">Đặt hàng</button>  
     </form>
   </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ 	
+ </script>
 </body>
 </html>

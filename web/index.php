@@ -37,5 +37,28 @@ if(isset($_SESSION['error'])){
 	<?php include 'products.php' ?>
 	<?php include 'footer.php' ?>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".cart").click(function(){
+				let ID = $(this).data('id');
+				$.ajax({
+					url: 'add_to_cart.php',
+					type : 'GET',
+					data:{ID},
+				})
+				.done(function() {
+					alert('Thanh cong');
+					console.log("success");
+				})
+				.fail(function () {
+					console.log("error");
+				})
+				.always(function(){
+					console.log("complete");
+				});
+			});
+		});
+	</script>
 </body>
 </html>

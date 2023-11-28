@@ -12,7 +12,7 @@ if(isset($_COOKIE['remember'])) {
 	$each = mysqli_fetch_array($result);
 	$_SESSION['ID'] = $each['ID'];
 	$_SESSION['Name'] = $each['Name'];
-    }
+    } 
 }
 if(isset($_SESSION['ID'])) {
 	header('location:user.php');

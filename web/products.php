@@ -33,20 +33,14 @@ $result = mysqli_query($connect, $sql);
         <div class='title'>
           <?php echo $each['Name'] ?>
         </div>
-        <!-- link thêm vào giỏ hàng -->
-        <?php if(!empty($_SESSION['ID'])) { ?> <div class='cart'>
-          <a href="add_to_cart.php?ID=<?php echo $each['ID'] ?>">
-          <span class='lnr lnr-cart'>
+        <?php #if(!empty($_SESSION['ID'])) { ?> 
+          <div class='cart' data-id='<?php $each['ID'] ?>'>
+          <span class='lnr lnr-cart' >
           </span>
-          </a>
-        </div>
-        <?php } else { ?>
-        <div class='cart'>
-          <span class='lnr lnr-cart'>
-          </span>
-          </a>
-        </div>
-        <?php } ?>
+          </div>
+        <?php #} else { ?>
+          
+        <?php #} ?>
       </div>
       <div class='card-footer'>
         <div class='span'>
@@ -56,15 +50,16 @@ $result = mysqli_query($connect, $sql);
             echo "Hết hàng";
           }
           ?>
-      </a>
+      
 
         </div>
         <div class='span'>
         <?php if($each['Producer_ID']==15) {
           ?>
-          <a href="gagionvuive.php">
+          
           Gà Giòn Vui Vẻ
-        </a>
+        
+        
         <?php 
           }elseif($each['Producer_ID']==16) {
           ?>

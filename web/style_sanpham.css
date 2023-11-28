@@ -6,7 +6,8 @@ body {
   background: #fcfcfc;
 }
 
-a {text-decoration:none}
+a {text-decoration:none
+color:black}
 
 .tung_san_pham{
     width: 33%;
