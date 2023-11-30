@@ -1,7 +1,7 @@
 <ul>
 	<li>
 		<a href="../manage_producer">
-			Quản lý dòng sản phẩm
+			Quản lý loại sản phẩm
 		</a>
 	</li>
 	<li>
@@ -12,6 +12,16 @@
 	<li>
 		<a href="../orders">
 			Quản lý đơn hàng
+		</a>
+	</li>
+	<li>
+		<a href="../root/doanh_thu_7_ngay.php">
+			Thống kê doanh thu 7 ngày gần nhất
+		</a>
+	</li>
+	<li>
+		<a href="../root/index2.php">
+			Thống kê số lượng từng sản phẩm đã bán trong 7 ngày
 		</a>
 	</li>
 </ul>

@@ -2,6 +2,7 @@
 
 session_start();
 $ID = $_GET['ID'];
+$idproducer = $_GET['idproducer'];
 
 if(empty($_SESSION['Cart'][$ID])) {
 	require 'admin/connect.php';
@@ -17,6 +18,6 @@ if(empty($_SESSION['Cart'][$ID])) {
 	$_SESSION['Cart'][$ID]['Quantity']++;
 }
 
-header('location:index.php');
-#54'
+header("location:index.php?IDpro=$idproducer");
+
 

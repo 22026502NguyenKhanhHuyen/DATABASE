@@ -4,6 +4,10 @@ if(isset($_SESSION['error'])){
 	echo $_SESSION['error'];
 	unset($_SESSION['error']);
 }
+if (!empty($_GET['IDpro']))
+	$ID = $_GET['IDpro'];
+else
+	$ID = 23;
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,36 +33,24 @@ if(isset($_SESSION['error'])){
 			height: 10%;
 		}
 	</style>
-
+	<meta charset="UTF-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Kanit:200,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="./style_sanpham.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/header.css">	
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-<div id ="tong">
-	<?php include 'menu.php' ?>
-	<?php include 'products.php' ?>
+<?php include 'menu.php' ?>
+	<?php include "products.php" ?>
 	<?php include 'footer.php' ?>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".cart").click(function(){
-				let ID = $(this).data('id');
-				$.ajax({
-					url: 'add_to_cart.php',
-					type : 'GET',
-					data:{ID},
-				})
-				.done(function() {
-					alert('Thanh cong');
-					console.log("success");
-				})
-				.fail(function () {
-					console.log("error");
-				})
-				.always(function(){
-					console.log("complete");
-				});
-			});
-		});
-	</script>
+
 </body>
 </html>

@@ -25,20 +25,31 @@ require '../check_admin_login.php';
 		<th>Mã</th>
 		<th>Tên</th>
 		<th>Ảnh</th>
+		<th>Mô tả</th>
 		<th>Giá</th>
 		<th>Dòng sản phẩm</th>
+		<th>Tình trạng</th>
 		<th>Sửa</th>
 		<th>Xóa</th>
 	</tr>
 	<?php foreach ($result as $each): ?> 
 		<tr>
 			<td><?php echo $each['ID'] ?></td>
-			<td><?php echo $each['Name'] ?></td>
+			<td align="center"><?php echo $each['Name'] ?></td>
 			<td>
 				<img  height ="100" src="Image/<?php echo $each['Image'] ?>">
 			</td>
+			<td align="center"><?php echo $each['Description']?></td>
 			<td><?php echo $each['Price'] ?></td>
-			<td><?php echo $each['Producer_Name'] ?></td>
+			<td><?php echo $each['Producer_Name'] ?>
+			</td>
+			<th>
+				<?php if($each['Status']==1){
+					echo "Còn hàng";
+				} else {
+					echo "Hết hàng";
+				}?>
+			</th>
 			<td>
 				<a href="form_update.php?ID=<?php echo $each['ID']?>">
 				Sửa

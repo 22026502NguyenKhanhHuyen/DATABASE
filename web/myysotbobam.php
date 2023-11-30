@@ -28,6 +28,9 @@ if(isset($_SESSION['error'])){
 			width: 100%;
 			height: 10%;
 		}
+		a {
+			text-decoration: none;
+		}
 	</style>
 
 </head>

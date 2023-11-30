@@ -54,6 +54,11 @@ require '../check_admin_login.php';
 
 		</select>
 		<br>
+		Tình Trạng 
+		<select name="Status">
+			<option value="1">Còn hàng</option>
+			<option value="0">Hết hàng</option>
+		</select>
 		<button>Sửa</button>
 	</form>
 </body>

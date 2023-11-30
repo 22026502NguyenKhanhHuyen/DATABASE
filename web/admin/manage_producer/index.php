@@ -7,6 +7,9 @@ require '../check_admin_login.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<style type="text/css">
+		table { width: 780px; margin-left: auto; margin-right: auto; }
+	</style>
 </head>
 <body>
 <?php require '../menu.php';
@@ -14,11 +17,11 @@ require '../check_admin_login.php';
 $sql = "select * from producer";
 $result = mysqli_query($connect, $sql);
 	?>
-<h1>Khu vực quản lí nhà sản xuất</h1>
+<h1>Loại sản phẩm</h1>
 <a href="form_insert.php">
 	Thêm
 </a>
-<table width="100%">
+<table>
 	<tr>
 		<th>Mã</th>
 		<th>Tên</th>
@@ -29,8 +32,8 @@ $result = mysqli_query($connect, $sql);
 	<?php foreach($result as $each): ?>
 		<tr>
 			<td><?php echo $each['ID'] ?></td>
-			<td><?php echo $each['Name'] ?></td>
-			<td>
+			<td align="center"><?php echo $each['Name'] ?></td>
+			<td align="center">
 				<img  height ="100" src="Image/<?php echo $each['Image'] ?>">
 			</td>
 			<td>

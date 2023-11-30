@@ -21,11 +21,9 @@ $result = mysqli_query($connect, $sql);
       <div class='card-content'>
         <div class='top-bar'>
           <span>
-           <p><?php echo $each['Price']?>$</p>
+           <p><?php echo $each['Price']?></p>
           </span>
-          <span class='float-right lnr lnr-heart'>
-          <!-- Đây là chỗ thả tim cho vào bst -->
-          </span>
+          
         </div>
         <div class='img'>
           <img src="admin/manage_products/Image/<?php echo $each['Image']?>">
@@ -64,13 +62,13 @@ $result = mysqli_query($connect, $sql);
         <div class='span'>
         <?php if($each['Producer_ID']==15) {
           ?>
-          <a href="gagionvuive.php">
+          
           Gà Giòn Vui Vẻ
         </a>
         <?php 
           }elseif($each['Producer_ID']==16) {
           ?>
-          <a href="myysotbobam.php">
+          
           Mỳ Ý Sốt Bò Bằm
         </a>
         <?php 

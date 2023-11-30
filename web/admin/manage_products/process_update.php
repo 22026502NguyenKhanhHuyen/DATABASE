@@ -20,6 +20,7 @@ if($Image_new['size'] > 0) {
 $Price = $_POST['Price'];
 $Description = $_POST['Description'];
 $Producer_ID = $_POST['Producer_ID'];
+$Status = $_POST['Status'];
 
 require '../connect.php';
 $sql = "update products
@@ -27,7 +28,8 @@ set Name = '$Name',
 Image = '$file_name',
 Price ='$Price',
 Description ='$Description',
-Producer_ID = '$Producer_ID'
+Producer_ID = '$Producer_ID',
+Status = '$Status'
 where ID = '$ID'";
 
 mysqli_query($connect, $sql);

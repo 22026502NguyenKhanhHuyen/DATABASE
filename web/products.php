@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <link href="https://fonts.googleapis.com/css?family=Kanit:200,400" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./style_sanpham.css">
-</head>
+
 <body>
+
+
 <?php
 require 'admin/connect.php';
-$sql = "select * from products";
+$sql = "";
+if($ID != 23){
+  $sql = "select * from products where producer_id = '$ID'";
+}else {
+  $sql = "select products.*, SUM(order_product.Quantity) as total
+from products
+join order_product on products.ID = order_product.Product_ID
+join orders on order_product.Order_ID = orders.ID
+where products.Combo = 1 and orders.Status = 3
+GROUP BY products.ID
+ORDER BY total desc
+limit 3;";
+}
 $result = mysqli_query($connect, $sql);
 ?>
+
+
+    
+
 <div class='body'>
   <div class='container'>
     <?php foreach ($result as $each): ?>
@@ -33,14 +45,19 @@ $result = mysqli_query($connect, $sql);
         <div class='title'>
           <?php echo $each['Name'] ?>
         </div>
-        <?php #if(!empty($_SESSION['ID'])) { ?> 
-          <div class='cart' data-id='<?php $each['ID'] ?>'>
-          <span class='lnr lnr-cart' >
+        <?php if(!empty($_SESSION['ID'])) { ?> <div class='cart'>
+          <a href="add_to_cart.php?ID=<?php echo $each['ID'] ?>&idproducer=<?php echo $ID ?>">
+          <span class='lnr lnr-cart'>
           </span>
-          </div>
-        <?php #} else { ?>
-          
-        <?php #} ?>
+          </a>
+        </div>
+        <?php } else { ?>
+        <div class='cart'>
+          <span class='lnr lnr-cart'>
+          </span>
+          </a>
+        </div>
+        <?php } ?>
       </div>
       <div class='card-footer'>
         <div class='span'>
@@ -104,6 +121,9 @@ $result = mysqli_query($connect, $sql);
   </div>
 </div>
 <!-- partial -->
+
+
   
 </body>
 </html>
+

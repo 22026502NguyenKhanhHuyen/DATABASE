@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+require '../menu.php';
 require '../connect.php';
 $sql = "select orders.* ,customers.Name, customers.Phone_Number, customers.Address
 from orders
